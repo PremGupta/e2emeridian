@@ -27,20 +27,21 @@ public class HomePage extends base{
 	}
 	@Test(dataProvider="getData")
 	
-	public void basePageNavigation(String Username,String Password,String text) throws IOException
+	public void basePageNavigation(String Username,String Password) throws IOException
 	{
 
 		//one is inheritance
 
 		// creating object to that class and invoke methods of it
 		driver.get(prop.getProperty("url"));
-		LandingPage l=new LandingPage(driver);
+		/*LandingPage l=new LandingPage(driver);
 		l.getLogin().click(); //driver.findElement(By.css()
-		LoginPage lp=new LoginPage(driver);
+		
+*/		LoginPage lp=new LoginPage(driver);
 		lp.getEmail().sendKeys(Username);
 		lp.getPassword().sendKeys(Password);
 
-		log.info(text);
+		//log.info(text);
 		
 		lp.getLogin().click();
 		
@@ -64,15 +65,16 @@ public class HomePage extends base{
 		
 		// Array size is 2
 		// 0,1
-		Object[][] data=new Object[2][3];
+		Object[][] data=new Object[1][2];
 		//0th row
-		data[0][0]="nonrestricteduser@qw.com";
-		data[0][1]="123456";
-		data[0][2]="Restrcited User";
-		//1st row
+		data[0][0]="ANNRENNER";
+		data[0][1]="ANNR";
+		//data[0][2]="Restrcited User";
+		
+		/*//1st row
 		data[1][0]="restricteduser@qw.com";
 		data[1][1]="456788";
-		data[1][2]= "Non restricted user";
+		data[1][2]= "Non restricted user";*/
 		
 		return data;
 		

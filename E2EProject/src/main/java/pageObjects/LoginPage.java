@@ -9,11 +9,9 @@ public class LoginPage {
 	
 	public WebDriver driver;
 	
-	By email=By.cssSelector("[id='user_email']");
-	By password=By.cssSelector("[type='password']");
-	By login=By.cssSelector("[value='Log In']");
-	
-	
+	By email=By.xpath(".//*[@id='user']");
+	By password=By.xpath(".//*[@id='password']");
+	By login=By.xpath(".//*[@id='searchContainer']/button");
 	
 	
 	public LoginPage(WebDriver driver) {
@@ -22,8 +20,6 @@ public class LoginPage {
 		this.driver=driver;
 		
 	}
-
-
 
 
 	public WebElement getEmail()
