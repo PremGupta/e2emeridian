@@ -16,13 +16,13 @@
     </classes>
   </test>
       
-    <test name="Validating title in the Page">
+<!--  <test name="Validating title in the Page">
      <classes>
       <class name="Academy.validateTitle"/>
      </classes>
     </test>
        
-    <test name="App Testing">
+<test name="App Testing">
      <classes>
       <class name="Academy.AppTest"/>
      </classes>
@@ -32,7 +32,7 @@
      <classes>
       <class name="Academy.validateNavigationBar"/>
      </classes>
-    </test>
+    </test> -->
     
    <!-- Test -->
 </suite> <!-- Suite -->

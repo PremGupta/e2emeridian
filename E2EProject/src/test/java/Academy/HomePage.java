@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -46,6 +47,21 @@ public class HomePage extends base{
 		lp.getLogin().click();
 		
 		}
+	
+	@Test
+	
+	public void validateAppTitle() throws IOException
+	{
+		
+		//one is inheritance
+		// creating object to that class and invoke methods of it
+		LandingPage l=new LandingPage(driver);
+		//compare the text from the browser with actual text.- Error..
+		Assert.assertEquals(l.getTitle().getText(), "Search For Your Flight");
+		 log.info("Title validated Successfully");
+		 System.out.println("Test completed");
+	
+	}
 
 	@AfterTest
 	public void teardown()

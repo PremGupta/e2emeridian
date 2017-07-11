@@ -7,12 +7,6 @@
   </listeners>
   <test name="Validating title in the Page(failed)">
     <classes>
-      <class name="Academy.HomePage">
-        <methods>
-          <include name="initialize"/>
-          <include name="teardown"/>
-        </methods>
-      </class> <!-- Academy.HomePage -->
       <class name="Academy.validateTitle">
         <methods>
           <include name="validateAppTitle"/>
@@ -20,35 +14,12 @@
           <include name="teardown"/>
         </methods>
       </class> <!-- Academy.validateTitle -->
-      <class name="Academy.validateNavigationBar">
-        <methods>
-          <include name="initialize"/>
-          <include name="teardown"/>
-        </methods>
-      </class> <!-- Academy.validateNavigationBar -->
-    </classes>
-  </test> <!-- Validating title in the Page(failed) -->
-  <test name="Validating navigation Bar(failed)">
-    <classes>
       <class name="Academy.HomePage">
         <methods>
           <include name="initialize"/>
           <include name="teardown"/>
         </methods>
       </class> <!-- Academy.HomePage -->
-      <class name="Academy.validateNavigationBar">
-        <methods>
-          <include name="initialize"/>
-          <include name="validateAppNavBar"/>
-          <include name="teardown"/>
-        </methods>
-      </class> <!-- Academy.validateNavigationBar -->
-      <class name="Academy.validateTitle">
-        <methods>
-          <include name="initialize"/>
-          <include name="teardown"/>
-        </methods>
-      </class> <!-- Academy.validateTitle -->
     </classes>
-  </test> <!-- Validating navigation Bar(failed) -->
+  </test> <!-- Validating title in the Page(failed) -->
 </suite> <!-- Failed suite [Suite] -->
