@@ -35,16 +35,18 @@ public class HomePage extends base{
 
 		// creating object to that class and invoke methods of it
 		driver.get(prop.getProperty("url"));
+		log.info("Landed on Loginpage Successfully");
 		/*LandingPage l=new LandingPage(driver);
 		l.getLogin().click(); //driver.findElement(By.css()
 		
 */		LoginPage lp=new LoginPage(driver);
 		lp.getEmail().sendKeys(Username);
 		lp.getPassword().sendKeys(Password);
-
+          
 		//log.info(text);
 		
 		lp.getLogin().click();
+		log.info("Logged In Successfully");
 		
 		}
 	
