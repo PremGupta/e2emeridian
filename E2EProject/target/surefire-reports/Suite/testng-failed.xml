@@ -5,21 +5,15 @@
     <listener class-name="Academy.listeners"/>
     <listener class-name="resources.ExtentReporterNG"/>
   </listeners>
-  <test name="Validating title in the Page(failed)">
+  <test name="Validating User login(failed)">
     <classes>
-      <class name="Academy.validateTitle">
-        <methods>
-          <include name="validateAppTitle"/>
-          <include name="initialize"/>
-          <include name="teardown"/>
-        </methods>
-      </class> <!-- Academy.validateTitle -->
       <class name="Academy.HomePage">
         <methods>
           <include name="initialize"/>
           <include name="teardown"/>
+          <include name="flightSearch" invocation-numbers="0"/>
         </methods>
       </class> <!-- Academy.HomePage -->
     </classes>
-  </test> <!-- Validating title in the Page(failed) -->
+  </test> <!-- Validating User login(failed) -->
 </suite> <!-- Failed suite [Suite] -->

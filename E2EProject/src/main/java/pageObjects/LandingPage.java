@@ -10,6 +10,8 @@ public class LandingPage {
 	public WebDriver driver;
 	
 	By title=By.xpath(".//*[@id='searchContainer']/h1");
+	By FlyingFrom=By.id("from");
+	By FlyingTo=By.xpath("to");
 	
 	
 	public LandingPage(WebDriver driver) {
@@ -25,6 +27,15 @@ public class LandingPage {
 		return driver.findElement(title);
 	}
 	
+	public WebElement flyingFrom()
+	{
+		return driver.findElement(FlyingFrom);
+	}
+	
+	public WebElement flyingTo()
+	{
+		return driver.findElement(FlyingTo);
+	}
 	
 	
 }

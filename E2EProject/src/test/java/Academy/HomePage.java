@@ -1,9 +1,12 @@
 package Academy;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -54,7 +57,11 @@ public class HomePage extends base{
 	
 	public void validateAppTitle() throws IOException
 	{
-		
+		try {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		//one is inheritance
 		// creating object to that class and invoke methods of it
 		LandingPage l=new LandingPage(driver);
@@ -62,15 +69,38 @@ public class HomePage extends base{
 		Assert.assertEquals(l.getTitle().getText(), "Search For Your Flight");
 		 log.info("Title validated Successfully");
 		 System.out.println("Test completed");
+	}
 	
+	@Test(dataProvider="flightSearchData")
+	
+	public void flightSearch(String Flyingfrom, String Flyingto) throws IOException, InterruptedException
+	{
+	
+		LandingPage l=new LandingPage(driver);
+         l.flyingFrom().sendKeys(Flyingfrom);
+         Thread.sleep(20000);
+         List<WebElement> optionsToSelect = driver.findElements(By.xpath("//div[@class='ui-menu-item-wrapper']"));
+          
+         String textToSelect= "Delhi, India  (DEL)";
+         for(WebElement option : optionsToSelect){
+             System.out.println(option);
+             if(option.getText().equals(textToSelect)) {
+                 System.out.println("Trying to select: "+textToSelect);
+                 option.click();
+                 break;
+             }
+         }
+         l.flyingTo().sendKeys(Flyingto);
+		 log.info("Title validated Successfully");
+		 System.out.println("Test completed");
 	}
 
 	@AfterTest
 	public void teardown()
 	{
 		
-		driver.close();
-		driver=null;
+		/*driver.close();
+		driver=null;*/
 		
 	}
 
@@ -95,11 +125,32 @@ public class HomePage extends base{
 		data[1][2]= "Non restricted user";*/
 		
 		return data;
+
 		
+	}
+	
+	
+	@DataProvider
+	public Object[][] flightSearchData()
+	{
+		// Row stands for how many different data types test should run
+		//coloumn stands for how many values per each test
 		
+		// Array size is 2
+		// 0,1
+		Object[][] fsdata=new Object[1][2];
+		//0th row
+		fsdata[0][0]="Delhi, India  (DEL)";
+		fsdata[0][1]="Delhi, India  (DEL)";
+		//data[0][2]="Restrcited User";
 		
+		/*//1st row
+		data[1][0]="restricteduser@qw.com";
+		data[1][1]="456788";
+		data[1][2]= "Non restricted user";*/
 		
-		
+		return fsdata;
+
 		
 	}
 	
